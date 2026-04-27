@@ -6,9 +6,13 @@
 #include <string.h>
 
 void setNode(struct node* node, char* key, char* value) {
-    node->key = key;
-    node->value = value;
-    node->next = nullptr;
+
+    if (node != NULL) {
+        node->key = key;
+        node->value = value;
+        node->expiry = (struct timespec){0};
+        node->next = nullptr;
+    }
 };
 void initializeHashMap(struct hashMap* mp) {
     mp->capacity = 100;

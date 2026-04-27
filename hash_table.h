@@ -4,6 +4,8 @@
 
 #ifndef HASHTABLE_HASH_TABLE_H
 #define HASHTABLE_HASH_TABLE_H
+#include <time.h>
+
 // Linked List node
 struct node {
 
@@ -12,6 +14,8 @@ struct node {
 
     // value is also string
     char* value;
+    //Expiration time
+    struct timespec expiry;
     struct node* next;
 };
 struct hashMap {
